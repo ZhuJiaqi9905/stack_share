@@ -1,0 +1,8 @@
+data () {
+    return {
+      user: {
+        username: 'xxx',
+        password: '123456'
+      }
+    }
+  },
