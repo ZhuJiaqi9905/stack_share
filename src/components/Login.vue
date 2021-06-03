@@ -7,11 +7,11 @@
         </div>
         <table>
           <tr>
-            <td>用户名</td>
+            <td>昵称</td>
             <td>
               <el-input
-                v-model='user.username'
-                placeholder='请输入用户名'
+                v-model='user.nickname'
+                placeholder='请输入昵称'
               ></el-input>
             </td>
           </tr>
@@ -47,7 +47,7 @@ export default {
   data () {
     return {
       user: {
-        username: '',
+        nickname: '',
         password: ''
       },
       radio: '1'

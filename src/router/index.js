@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import First from '@/components/views/First'
 import Login from '@/components/Login'
-import GeekPage from '@/components/GeekPage'
+import UserPage from '@/components/user/UserPage'
+import PostDemand from '@/components/user/PostDemand'
+import Signup from '@/components/Signup';
 Vue.use(Router)
 
 export default new Router({
@@ -14,19 +15,24 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/first',
-      name: 'First',
-      component: First
-    },
-    {
       path: '/login',
       name: 'Login',
       component: Login
     },
     {
-      path: '/geekpage',
-      name: 'GeekPage',
-      component: GeekPage
+      path: '/signup',
+      name: 'Signup',
+      component: Signup
+    },
+    {
+      path: '/user/user-page',
+      name: 'UserPage',
+      component: UserPage
+    },
+    {
+      path: '/user/post-demand',
+      name: 'PostDemand',
+      component: PostDemand
     }
   ]
 })
