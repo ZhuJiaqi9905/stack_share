@@ -4,7 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/Login'
 import UserPage from '@/components/user/UserPage'
 import PostDemand from '@/components/user/PostDemand'
-import Signup from '@/components/Signup';
+import Signup from '@/components/Signup'
+import DetailDemand from '@/components/user/DetailDemand';
 Vue.use(Router)
 
 export default new Router({
@@ -33,6 +34,11 @@ export default new Router({
       path: '/user/post-demand',
       name: 'PostDemand',
       component: PostDemand
+    },
+    {
+      path: '/user/detail-demand',
+      name: 'DetailDemand',
+      component: DetailDemand
     }
   ]
 })
