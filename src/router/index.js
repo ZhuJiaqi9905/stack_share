@@ -5,7 +5,9 @@ import Login from '@/components/Login'
 import UserPage from '@/components/user/UserPage'
 import PostDemand from '@/components/user/PostDemand'
 import Signup from '@/components/Signup'
-import GeekPage from "@/components/user/GeekPage"
+import GeekPage from "@/components/geek/GeekPage"
+import PostSkill from "@/components/geek/PostSkill"
+import DetailTask from "@/components/geek/DetailTask";
 import DetailDemand from '@/components/user/DetailDemand';
 Vue.use(Router)
 
@@ -42,9 +44,19 @@ export default new Router({
       component: DetailDemand
     },
     {
-      path: '/user/geek-page',
+      path: '/geek/geek-page',
       name: 'GeekPage',
       component: GeekPage
+    },
+    {
+      path: '/geek/post-skill',
+      name: 'PostSkill',
+      component: PostSkill
+    },
+    {
+      path: '/geek/detail-task',
+      name: 'DetailTask',
+      component: DetailTask
     }
   ]
 })

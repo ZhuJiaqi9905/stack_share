@@ -9,12 +9,12 @@
           @select="handleSelect"
         >
           <el-menu-item index="1"
-            ><a href="http://localhost:8080/#/user/user-demand" target="_blank"
+            ><a href="http://localhost:8080/#/user/post-demand" target="_blank"
               >发布需求</a
             ></el-menu-item
           >
           <el-menu-item index="2"
-            ><a href="http://localhost:8080/#/user/geek-page" target="_blank"
+            ><a href="http://localhost:8080/#/geek/geek-page" target="_blank"
               >开发者页面</a
             ></el-menu-item
           >

@@ -9,7 +9,7 @@
           @select="handleSelect"
         >
           <el-menu-item index="1"
-          ><a href="http://localhost:8080/#/user/geek-skills" target="_blank"
+          ><a href="http://localhost:8080/#/geek/post-skill" target="_blank"
           >张贴技能</a
           ></el-menu-item
           >
