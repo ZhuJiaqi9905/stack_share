@@ -5,6 +5,7 @@ import Login from '@/components/Login'
 import UserPage from '@/components/user/UserPage'
 import PostDemand from '@/components/user/PostDemand'
 import Signup from '@/components/Signup'
+import GeekPage from "@/components/user/GeekPage"
 import DetailDemand from '@/components/user/DetailDemand';
 Vue.use(Router)
 
@@ -39,6 +40,11 @@ export default new Router({
       path: '/user/detail-demand',
       name: 'DetailDemand',
       component: DetailDemand
+    },
+    {
+      path: '/user/geek-page',
+      name: 'GeekPage',
+      component: GeekPage
     }
   ]
 })
