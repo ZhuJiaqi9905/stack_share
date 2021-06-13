@@ -9,6 +9,7 @@ import GeekPage from "@/components/geek/GeekPage"
 import PostSkill from "@/components/geek/PostSkill"
 import DetailTask from "@/components/geek/DetailTask";
 import DetailDemand from '@/components/user/DetailDemand';
+import DataService from '@/components/user/DataService';
 Vue.use(Router)
 
 export default new Router({
@@ -42,6 +43,11 @@ export default new Router({
       path: '/user/detail-demand',
       name: 'DetailDemand',
       component: DetailDemand
+    },
+    {
+      path: '/user/data-service',
+      name: 'DataService',
+      component: DataService
     },
     {
       path: '/geek/geek-page',
