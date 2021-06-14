@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/Login'
 import UserPage from '@/components/user/UserPage'
 import PostDemand from '@/components/user/PostDemand'
+import PostSuccess from '@/components/user/PostSuccess'
 import Signup from '@/components/Signup'
 import GeekPage from "@/components/geek/GeekPage"
 import PostSkill from "@/components/geek/PostSkill"
@@ -38,6 +39,11 @@ export default new Router({
       path: '/user/post-demand',
       name: 'PostDemand',
       component: PostDemand
+    },
+    {
+      path: '/user/post-success',
+      name: 'PostSuccess',
+      component: PostSuccess
     },
     {
       path: '/user/detail-demand',
