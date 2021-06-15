@@ -50,7 +50,7 @@
           <div style="padding: 25px">
             <el-card class="box-card" shadow="always">
               <div slot="header" class="clearfix">
-                <span>安卓应用开发</span>
+                <span>应用开发</span>
               </div>
               <div v-for="o in description" :key="o" class="text item">
                 {{ o }}
@@ -62,120 +62,128 @@
       </el-container>
       <el-footer>
         <el-tabs type="border-card">
-          <el-tab-pane label="详情页">
-            详细信息
+          <el-tab-pane label="详情页"> 
+            <el-image :src="detail" :fit="fit"></el-image>
           </el-tab-pane>
           <el-tab-pane label="评论区">
-<div>
-      <div @click="inputFocus" class="my-reply">
-        <el-avatar class="header-img" :size="40" :src="myHeader"></el-avatar>
-        <div class="reply-info">
-          <div
-            tabindex="0"
-            contenteditable="true"
-            id="replyInput"
-            spellcheck="false"
-            placeholder="输入评论..."
-            class="reply-input"
-            @focus="showReplyBtn"
-            @input="onDivInput($event)"
-          ></div>
-        </div>
-        <div class="reply-btn-box" v-show="btnShow">
-          <el-button
-            class="reply-btn"
-            size="medium"
-            @click="sendComment"
-            type="primary"
-            >发表评论</el-button
-          >
-        </div>
-      </div>
-      <div
-        v-for="(item, i) in comments"
-        :key="i"
-        class="author-title reply-father"
-      >
-        <el-avatar
-          class="header-img"
-          :size="40"
-          :src="item.headImg"
-        ></el-avatar>
-        <div class="author-info">
-          <span class="author-name">{{ item.name }}</span>
-          <span class="author-time">{{ item.time }}</span>
-        </div>
-        <div class="icon-btn">
-          <span @click="showReplyInput(i, item.name, item.id)"
-            ><i class="iconfont el-icon-s-comment"></i
-            >{{ item.commentNum }}</span
-          >
-          <i class="iconfont el-icon-caret-top"></i>{{ item.like }}
-        </div>
-        <div class="talk-box">
-          <p>
-            <span class="reply">{{ item.comment }}</span>
-          </p>
-        </div>
-        <div class="reply-box">
-          <div v-for="(reply, j) in item.reply" :key="j" class="author-title">
-            <el-avatar
-              class="header-img"
-              :size="40"
-              :src="reply.fromHeadImg"
-            ></el-avatar>
-            <div class="author-info">
-              <span class="author-name">{{ reply.from }}</span>
-              <span class="author-time">{{ reply.time }}</span>
-            </div>
-            <div class="icon-btn">
-              <span @click="showReplyInput(i, reply.from, reply.id)"
-                ><i class="iconfont el-icon-s-comment"></i
-                >{{ reply.commentNum }}</span
+            <div>
+              <div @click="inputFocus" class="my-reply">
+                <el-avatar
+                  class="header-img"
+                  :size="40"
+                  :src="myHeader"
+                ></el-avatar>
+                <div class="reply-info">
+                  <div
+                    tabindex="0"
+                    contenteditable="true"
+                    id="replyInput"
+                    spellcheck="false"
+                    placeholder="输入评论..."
+                    class="reply-input"
+                    @focus="showReplyBtn"
+                    @input="onDivInput($event)"
+                  ></div>
+                </div>
+                <div class="reply-btn-box" v-show="btnShow">
+                  <el-button
+                    class="reply-btn"
+                    size="medium"
+                    @click="sendComment"
+                    type="primary"
+                    >发表评论</el-button
+                  >
+                </div>
+              </div>
+              <div
+                v-for="(item, i) in comments"
+                :key="i"
+                class="author-title reply-father"
               >
-              <i class="iconfont el-icon-caret-top"></i>{{ reply.like }}
+                <el-avatar
+                  class="header-img"
+                  :size="40"
+                  :src="item.headImg"
+                ></el-avatar>
+                <div class="author-info">
+                  <span class="author-name">{{ item.name }}</span>
+                  <span class="author-time">{{ item.time }}</span>
+                </div>
+                <div class="icon-btn">
+                  <span @click="showReplyInput(i, item.name, item.id)"
+                    ><i class="iconfont el-icon-s-comment"></i
+                    >{{ item.commentNum }}</span
+                  >
+                  <i class="iconfont el-icon-caret-top"></i>{{ item.like }}
+                </div>
+                <div class="talk-box">
+                  <p>
+                    <span class="reply">{{ item.comment }}</span>
+                  </p>
+                </div>
+                <div class="reply-box">
+                  <div
+                    v-for="(reply, j) in item.reply"
+                    :key="j"
+                    class="author-title"
+                  >
+                    <el-avatar
+                      class="header-img"
+                      :size="40"
+                      :src="reply.fromHeadImg"
+                    ></el-avatar>
+                    <div class="author-info">
+                      <span class="author-name">{{ reply.from }}</span>
+                      <span class="author-time">{{ reply.time }}</span>
+                    </div>
+                    <div class="icon-btn">
+                      <span @click="showReplyInput(i, reply.from, reply.id)"
+                        ><i class="iconfont el-icon-s-comment"></i
+                        >{{ reply.commentNum }}</span
+                      >
+                      <i class="iconfont el-icon-caret-top"></i>{{ reply.like }}
+                    </div>
+                    <div class="talk-box">
+                      <p>
+                        <span>回复 {{ reply.to }}:</span>
+                        <span class="reply">{{ reply.comment }}</span>
+                      </p>
+                    </div>
+                    <div class="reply-box"></div>
+                  </div>
+                </div>
+                <div v-show="_inputShow(i)" class="my-reply my-comment-reply">
+                  <el-avatar
+                    class="header-img"
+                    :size="40"
+                    :src="myHeader"
+                  ></el-avatar>
+                  <div class="reply-info">
+                    <div
+                      tabindex="0"
+                      contenteditable="true"
+                      spellcheck="false"
+                      placeholder="输入评论..."
+                      @input="onDivInput($event)"
+                      class="reply-input reply-comment-input"
+                    ></div>
+                  </div>
+                  <div class="reply-btn-box">
+                    <el-button
+                      class="reply-btn"
+                      size="medium"
+                      @click="sendCommentReply(i, j)"
+                      type="primary"
+                      >发表评论</el-button
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="talk-box">
-              <p>
-                <span>回复 {{ reply.to }}:</span>
-                <span class="reply">{{ reply.comment }}</span>
-              </p>
-            </div>
-            <div class="reply-box"></div>
-          </div>
-        </div>
-        <div v-show="_inputShow(i)" class="my-reply my-comment-reply">
-          <el-avatar class="header-img" :size="40" :src="myHeader"></el-avatar>
-          <div class="reply-info">
-            <div
-              tabindex="0"
-              contenteditable="true"
-              spellcheck="false"
-              placeholder="输入评论..."
-              @input="onDivInput($event)"
-              class="reply-input reply-comment-input"
-            ></div>
-          </div>
-          <div class="reply-btn-box">
-            <el-button
-              class="reply-btn"
-              size="medium"
-              @click="sendCommentReply(i, j)"
-              type="primary"
-              >发表评论</el-button
-            >
-          </div>
-        </div>
-      </div>
-    </div>
           </el-tab-pane>
-
-      </el-tabs>
-         </el-footer>
+        </el-tabs>
+      </el-footer>
     </el-container>
-
-
-
   </div>
 </template>
 
@@ -187,8 +195,9 @@ export default {
       theScore: 4.5,
       activeIndex: "",
       fit: "fill",
-      url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
-      description: ["安卓系统", "提供源代码", "文档详细", "质量保证"],
+      url: "./static/app.png",
+      detail: './static/detail.png',
+      description: ["安卓系统 / h5小程序 / 网页开发", "提供源代码", "文档详细", "质量保证"],
       btnShow: false,
       index: "0",
       replyComment: "",
@@ -475,7 +484,7 @@ a {
   width: flex;
 }
 .author-title:not(:last-child) {
-  border-bottom: 1px solid rgba(178,186,194,0.3);
+  border-bottom: 1px solid rgba(178, 186, 194, 0.3);
 }
 .author-title {
   padding: 10px;
@@ -491,7 +500,7 @@ a {
   height: 40px;
   line-height: 20px;
 }
-.author-title .author-info >span {
+.author-title .author-info > span {
   display: block;
   cursor: pointer;
   overflow: hidden;
@@ -517,7 +526,7 @@ a {
     padding: 7px;
   }
 }
-.author-title .icon-btn >span {
+.author-title .icon-btn > span {
   cursor: pointer;
 }
 .author-title .icon-btn .iconfont {
@@ -526,7 +535,7 @@ a {
 .author-title .talk-box {
   margin: 0 50px;
 }
-.author-title .talk-box >p {
+.author-title .talk-box > p {
   margin: 0;
 }
 .author-title .talk-box .reply {
@@ -537,6 +546,5 @@ a {
   margin: 10px 0 0 50px;
   background-color: #efefef;
 }
-
 </style>
 

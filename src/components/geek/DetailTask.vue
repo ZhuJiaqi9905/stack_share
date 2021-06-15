@@ -39,8 +39,8 @@
         </el-menu>
       </el-header>
       <el-container>
-        <el-aside width="500px">
-          <div class="app-image" style="padding: 50px">
+        <el-aside width="50%">
+          <div class="app-image" style="padding: 10px">
             <div class="block">
               <el-image :src="url" :fit="fit"></el-image>
             </div>
@@ -82,97 +82,8 @@
         theScore: 4.5,
         activeIndex: "",
         fit: "fill",
-        url: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa428.phobos.apple.com%2Fus%2Fr30%2FPurple5%2Fv4%2F2d%2F98%2F04%2F2d980427-a84e-962d-c5d1-5d567911190c%2Fmzl.gbvxddgi.png&refer=http%3A%2F%2Fa428.phobos.apple.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625765381&t=4e945598d0b59a465f1c528ed48349ba",
-        description: ["安卓系统", "提供源代码", "文档详细", "质量保证"],
-        btnShow: false,
-        index: "0",
-        replyComment: "",
-        myName: "Lana Del Rey",
-        myHeader:
-          "https://ae01.alicdn.com/kf/Hd60a3f7c06fd47ae85624badd32ce54dv.jpg",
-        myId: 19870621,
-        to: "",
-        toId: -1,
-        comments: [
-          {
-            name: "Lana Del Rey",
-            id: 19870621,
-            headImg:
-              "https://ae01.alicdn.com/kf/Hd60a3f7c06fd47ae85624badd32ce54dv.jpg",
-            comment: "完成了我的需求，代码详细，非常感谢",
-            time: "2019年9月16日 18:43",
-            commentNum: 2,
-            like: 15,
-            inputShow: false,
-            reply: [
-              {
-                from: "Taylor Swift",
-                fromId: 19891221,
-                fromHeadImg:
-                  "https://ae01.alicdn.com/kf/H94c78935ffa64e7e977544d19ecebf06L.jpg",
-                to: "Lana Del Rey",
-                toId: 19870621,
-                comment: "谢谢你的肯定",
-                time: "2019年9月16日 18:43",
-                commentNum: 1,
-                like: 15,
-                inputShow: false,
-              },
-              // {
-              //   from: "Ariana Grande",
-              //   fromId: 1123,
-              //   fromHeadImg:
-              //     "https://ae01.alicdn.com/kf/Hf6c0b4a7428b4edf866a9fbab75568e6U.jpg",
-              //   to: "Lana Del Rey",
-              //   toId: 19870621,
-              //   comment: "别忘记宣传我们的合作单曲啊",
-              //   time: "2019年9月16日 18:43",
-              //   commentNum: 0,
-              //   like: 5,
-              //   inputShow: false,
-              // },
-            ],
-          },
-          // {
-          //   name: "Taylor Swift",
-          //   id: 19891221,
-          //   headImg:
-          //     "https://ae01.alicdn.com/kf/H94c78935ffa64e7e977544d19ecebf06L.jpg",
-          //   comment: "我发行了我的新专辑Lover",
-          //   time: "2019年9月16日 18:43",
-          //   commentNum: 1,
-          //   like: 5,
-          //   inputShow: false,
-          //   reply: [
-          //     {
-          //       from: "Lana Del Rey",
-          //       fromId: 19870621,
-          //       fromHeadImg:
-          //         "https://ae01.alicdn.com/kf/Hd60a3f7c06fd47ae85624badd32ce54dv.jpg",
-          //       to: "Taylor Swift",
-          //       toId: 19891221,
-          //       comment: "新专辑和speak now 一样棒！",
-          //       time: "2019年9月16日 18:43",
-          //       commentNum: 25,
-          //       like: 5,
-          //       inputShow: false,
-          //     },
-          //   ],
-          // },
-          // {
-          //   name: "Norman Fucking Rockwell",
-          //   id: 20190830,
-          //   headImg:
-          //     "https://ae01.alicdn.com/kf/Hdd856ae4c81545d2b51fa0c209f7aa28Z.jpg",
-          //   comment: "Plz buy Norman Fucking Rockwell on everywhere",
-          //   time: "2019年9月16日 18:43",
-          //   commentNum: 0,
-          //   like: 5,
-          //   inputShow: false,
-          //   reply: [],
-          // },
-        ],
-      };
+        url: "./static/douban.PNG",
+      }
     },
     methods: {
       handleSelect(key, keyPath) {
